@@ -36,5 +36,22 @@
         用户生日:<input type="text" name="birthday">
         <input type="submit" value="提交">
     </form>
+
+    <h2>常用注解</h2>
+
+    <a href="anno/testAnnoParam?uname=哈哈">RequestParam注解</a><br>
+
+    <form action="anno/testAnnoRequestBody" method="post">
+        用户名：<input type="text" name="name"><br>
+        密码： <input type="text" name="password"><br>
+        <input type="submit" value="提交">
+    </form><br>
+
+    <a href="anno/testAnnoPathVariable/10">PathVariable注解</a><br>
+
+    <form action="anno/testAnnoModelAttribute" method="post">
+        用户名：<input type="text" name="name"><br>
+        <input type="submit" value="提交">
+    </form><br>
 </body>
 </html>
