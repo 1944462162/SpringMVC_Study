@@ -1,0 +1,40 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Lenovo
+  Date: 2020/1/30
+  Time: 11:26
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+
+    <h2>入门程序</h2>
+    <a href="hello?username=hehe">hello</a>
+
+
+    <h2>请求参数的绑定</h2>
+
+    <a href="Param/testParam1?name=hehe&passworld=123">请求参数的绑定</a>
+
+    <form action="Param/testParam2">
+        姓名：<input type="text" name="name"><br>
+        密码：<input type="text" name="password"><br>
+        金额：<input type="text" name="money"><br>
+        用户姓名：<input type="text" name="user.uname"><br>
+        用户年龄：<input type="text" name="user.age"><br>
+
+        集合类型的姓名：<input type="text" name="listUser[0].uname"><br>
+        集合类型的年龄：<input type="text" name="listUser[0].age"><br>
+
+        Map类型的用户姓名：<input type="text" name="mapUser['one'].uname"><br>
+        Map类型的用户年龄：<input type="text" name="mapUser['one'].age"><br>
+
+        用户生日:<input type="text" name="birthday">
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
