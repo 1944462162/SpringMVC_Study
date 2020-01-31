@@ -12,6 +12,6 @@
 </head>
 <body>
     <h2>成功界面</h2>
-
+    <%System.out.println("加载界面成功");%>
 </body>
 </html>

@@ -38,4 +38,13 @@
     <bean class="com.imust.exception.SysExceptionResolver" id="exceptionResolver"/>
     <!--开启springMVC框架的注解支持，并添加自定义的类型转化器-->
     <mvc:annotation-driven conversion-service="conversionService" />
+
+    <!--定义拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--拦截的路径-->
+            <mvc:mapping path="/User/**"/>
+            <bean class="com.imust.utils.MyInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
