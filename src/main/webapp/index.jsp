@@ -72,5 +72,9 @@
         选择文件：<input type="file" name="upload">
         <input type="submit" value="上传">
     </form>
+
+    <h2>异常处理</h2>
+
+    <a href="User/testEcxeption">testEcxeption</a>
 </body>
 </html>

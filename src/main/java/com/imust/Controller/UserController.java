@@ -1,6 +1,7 @@
 package com.imust.Controller;
 
 import com.imust.domain.User;
+import com.imust.exception.SysException;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -86,6 +87,28 @@ public class UserController {
         //完成上传
         upload.transferTo(new File(path,filename));
 
+        return "success";
+    }
+
+
+    /**
+     * 异常处理的方法：
+     *
+     * 1.自定义异常类
+     * 2.配置异常处理器
+     * @return
+     * @throws SysException
+     */
+    @RequestMapping("/testEcxeption")
+    public String testEcxeption() throws SysException {
+        System.out.println("testEcxeption执行了");
+        try {
+            int a = 10 / 0;
+        } catch (Exception e) {
+            //打印异常信息
+            e.printStackTrace();
+            throw new SysException("查询数据库信息出现异常");
+        }
         return "success";
     }
 }
