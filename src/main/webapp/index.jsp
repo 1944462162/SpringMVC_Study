@@ -53,5 +53,24 @@
         用户名：<input type="text" name="name"><br>
         <input type="submit" value="提交">
     </form><br>
+
+    <a href="anno/testSessionAttribute">testSessionAttribute</a><br>
+    <a href="anno/getSessionAttribute">getSessionAttribute</a><br>
+    <a href="anno/delSessionStatus">delSessionStatus</a><br>
+
+    <h2>反应值是Void类型的</h2>
+
+    <a href="User/testVoid">testVoid</a>
+
+    <h2>反应值是ModelAndView类型的</h2>
+
+    <a href="User/testModelAndView">testModelAndView</a>
+
+    <h2>文件上传</h2>
+
+    <form action="User/fileUpload" method="post" enctype="multipart/form-data">
+        选择文件：<input type="file" name="upload">
+        <input type="submit" value="上传">
+    </form>
 </body>
 </html>

@@ -2,7 +2,12 @@ package com.imust.Controller;
 
 import com.imust.domain.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
+
+import java.nio.channels.FileChannel;
 import java.util.Map;
 
 /**
@@ -13,6 +18,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/anno")
+@SessionAttributes(value = {"msg"})
 public class AnnounceController {
 
     /**
@@ -75,5 +81,41 @@ public class AnnounceController {
         user.setUname(name);
         user.setAge(20);
         map.put("aaa",user);
+    }
+
+
+    /**
+     * 将数据存入session域对象中：
+     *    作用实现数据共享
+     * @param mode
+     * @return
+     */
+    @RequestMapping("/testSessionAttribute")
+    public String testSessionAttribute(Model mode){
+        mode.addAttribute("msg","美美");
+        return "success";
+    }
+
+    /**
+     * 获取Session对象
+     * @param modelMap
+     * @return
+     */
+    @RequestMapping("/getSessionAttribute")
+    public String getSessionAttribute(ModelMap modelMap){
+        Object msg = modelMap.get("msg");
+        System.out.println(msg);
+        return "success";
+    }
+
+    /**
+     * 清除Session中的对象
+     * @param status
+     * @return
+     */
+    @RequestMapping("/delSessionStatus")
+    public String delSessionStatus(SessionStatus status){
+        status.setComplete();
+        return "success";
     }
 }
